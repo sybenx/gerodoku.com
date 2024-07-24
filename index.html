@@ -8,8 +8,8 @@
     <style>
         body {
             font-family: Verdana, sans-serif;
-            background-color: #312417;
-            color: cornsilk;
+            background-color: #f0e6d2; /* Lighter beige background */
+            color: #5c4a3d; /* Darker brown for text */
             margin: 0;
             padding: 0;
             min-height: 100vh;
@@ -23,14 +23,14 @@
         }
         .header {
             text-align: center;
-            padding: 60px 0 20px; /* Increased top padding */
-            background-color: rgba(0, 0, 0, 0.5);
+            padding: 60px 0 20px;
+            background-color: rgba(222, 184, 135, 0.3); /* Lighter, more transparent background */
         }
         .header img {
             border-radius: 7%;
             height: 100px;
-            box-shadow: 0px 0px 50px 5px burlywood;
-            margin-top: 40px; /* Added margin at the top of the image */
+            box-shadow: 0px 0px 50px 5px #d4a76a; /* Lighter shadow */
+            margin-top: 40px;
         }
         .sections {
             display: flex;
@@ -57,53 +57,53 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.7); /* Lighter overlay */
             transition: background 0.3s ease;
         }
         .section:hover {
             flex: 2;
         }
         .section:hover::before {
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.5); /* Even lighter on hover */
         }
         .section-content {
             position: relative;
             z-index: 1;
         }
         h1, h2 {
-            color: burlywood;
+            color: #8b4513; /* Darker, richer brown for headers */
         }
         .button {
             display: inline-block;
             padding: 10px 16px;
             margin: 5px;
-            background-color: #71070b;
-            color: #ff9797;
+            background-color: #d2691e; /* More vibrant button color */
+            color: #fff;
             text-decoration: none;
             border-radius: 8px;
-            border: 2px solid #97090e;
+            border: 2px solid #a0522d;
             transition: all 0.3s ease;
         }
         .button:hover {
-            background-color: #420407;
-            color: #A60C12;
+            background-color: #a0522d;
+            color: #fff;
         }
         .button.modrinth {
-            background-color: #05520f;
-            border-color: green;
+            background-color: #1e8449; /* Brighter green */
+            border-color: #145a32;
         }
         .button.modrinth:hover {
-            background-color: #04320A;
-            border-color: #05520f;
+            background-color: #145a32;
+            border-color: #0b3e24;
         }
         .footer {
             text-align: center;
             padding: 20px 0;
             font-size: 14px;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(222, 184, 135, 0.3); /* Lighter, more transparent background */
         }
         .footer a {
-            color: #FFD477;
+            color: #8b4513; /* Darker brown for footer links */
             text-decoration: none;
         }
         .footer a:hover {
@@ -131,7 +131,7 @@
             <section class="section" style="background-image: url('/images/gerudoku-faithful-bg.jpg');">
                 <div class="section-content">
                     <h2>GeruDoku Faithful</h2>
-                    <p>A faithful continuation of GeruDoku, maintaining its style while adding new textures.</p>
+                    <p>A faithful adaptation of GeruDoku, maintaining its style while increasing resolution.</p>
                     <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-faithful" class="button">CurseForge</a>
                     <a href="https://modrinth.com/resourcepack/gerudoku-faithful" class="button modrinth">Modrinth</a>
                 </div>
@@ -148,7 +148,7 @@
         
         <footer class="footer">
             <p>Maintained by <a href="https://github.com/sybenx">Syben</a> | <a href="https://github.com/sybenx/GeruDoku">GitHub</a> | <a href="https://www.planetminecraft.com/texture-pack/gerudoku-1433368/">Planet Minecraft</a> | <a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/3031460-gerudoku/">Minecraft Forum</a></p>
-            <p>For more information on the original Shadow of Israphel series and map recreations, please visit our <a href="/about">About page</a>.</p>
+            <p>For more information on the original Shadow of Israphel series and map recreations, please visit our <a href="#">About page</a>.</p>
         </footer>
     </div>
 </body>

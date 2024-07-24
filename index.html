@@ -50,25 +50,16 @@
             position: relative;
             overflow: hidden;
         }
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6); /* Slightly more transparent */
-            transition: background 0.3s ease;
-        }
         .section:hover {
             flex: 2;
-        }
-        .section:hover::before {
-            background: rgba(0, 0, 0, 0.3); /* More transparent on hover */
         }
         .section-content {
             position: relative;
             z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 
+                         -2px -2px 4px rgba(0,0,0,0.8), 
+                         2px -2px 4px rgba(0,0,0,0.8), 
+                         -2px 2px 4px rgba(0,0,0,0.8);
         }
         h1, h2 {
             color: #deb887; /* Slightly brighter burlywood */
@@ -77,23 +68,24 @@
             display: inline-block;
             padding: 10px 16px;
             margin: 5px;
-            background-color: #8c0d11; /* Slightly brighter red */
-            color: #ffa8a8; /* Slightly brighter text */
+            background-color: rgba(140, 13, 17, 0.8); /* Slightly transparent */
+            color: #ffa8a8;
             text-decoration: none;
             border-radius: 8px;
             border: 2px solid #a80f14;
             transition: all 0.3s ease;
+            text-shadow: none; /* Remove text shadow from buttons */
         }
         .button:hover {
-            background-color: #520508;
+            background-color: rgba(82, 5, 8, 0.9);
             color: #B61D23;
         }
         .button.modrinth {
-            background-color: #066312; /* Slightly brighter green */
+            background-color: rgba(6, 99, 18, 0.8); /* Slightly transparent */
             border-color: #0a8d1a;
         }
         .button.modrinth:hover {
-            background-color: #04400c;
+            background-color: rgba(4, 64, 12, 0.9);
             border-color: #066312;
         }
         .footer {

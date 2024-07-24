@@ -8,26 +8,28 @@
     <style>
         body {
             font-family: Verdana, sans-serif;
-            background-color: #3d2e1d;
-            color: #e6d9c6;
+            background-color: #3d2e1d; /* Slightly lighter than original #312417 */
+            color: #e6d9c6; /* Slightly lighter than cornsilk */
             margin: 0;
             padding: 0;
             min-height: 100vh;
-        }
-        .container {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+        }
+        .container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         .header {
             text-align: center;
             padding: 60px 0 20px;
-            background-color: rgba(61, 46, 29, 0.7);
+            background-color: rgba(61, 46, 29, 0.7); /* Slightly lighter background */
         }
         .header img {
             border-radius: 7%;
             height: 100px;
-            box-shadow: 0px 0px 50px 5px #deb887;
+            box-shadow: 0px 0px 50px 5px #deb887; /* Slightly brighter shadow */
             margin-top: 40px;
         }
         .sections {
@@ -43,6 +45,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            background-size: cover;
+            background-position: center;
             position: relative;
             overflow: hidden;
         }
@@ -53,16 +57,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
+            background: rgba(0, 0, 0, 0.3); /* Light darkness overlay */
+            transition: background 0.3s ease;
         }
         .section:hover {
             flex: 2;
         }
         .section:hover::before {
-            opacity: 1;
+            background: rgba(0, 0, 0, 0); /* Remove darkness on hover */
         }
         .section-content {
             position: relative;
@@ -73,26 +75,26 @@
                          -2px 2px 4px rgba(0,0,0,0.8);
         }
         h1, h2 {
-            color: #deb887;
+            color: #deb887; /* Slightly brighter burlywood */
         }
         .button {
             display: inline-block;
             padding: 10px 16px;
             margin: 5px;
-            background-color: rgba(140, 13, 17, 0.8);
+            background-color: rgba(140, 13, 17, 0.8); /* Slightly transparent */
             color: #ffa8a8;
             text-decoration: none;
             border-radius: 8px;
             border: 2px solid #a80f14;
             transition: all 0.3s ease;
-            text-shadow: none;
+            text-shadow: none; /* Remove text shadow from buttons */
         }
         .button:hover {
             background-color: rgba(82, 5, 8, 0.9);
             color: #B61D23;
         }
         .button.modrinth {
-            background-color: rgba(6, 99, 18, 0.8);
+            background-color: rgba(6, 99, 18, 0.8); /* Slightly transparent */
             border-color: #0a8d1a;
         }
         .button.modrinth:hover {
@@ -103,10 +105,10 @@
             text-align: center;
             padding: 20px 0;
             font-size: 14px;
-            background-color: rgba(61, 46, 29, 0.7);
+            background-color: rgba(61, 46, 29, 0.7); /* Slightly lighter background */
         }
         .footer a {
-            color: #ffe187;
+            color: #ffe187; /* Slightly brighter link color */
             text-decoration: none;
         }
         .footer a:hover {
@@ -122,7 +124,7 @@
         </header>
         
         <div class="sections">
-            <section class="section">
+            <section class="section" style="background-image: url('/images/gerudoku-bg.jpg');">
                 <div class="section-content">
                     <h2>GeruDoku</h2>
                     <p>The original GeruDoku texture pack, reminiscent of the Yogscast Minecraft Survival series.</p>
@@ -131,16 +133,16 @@
                 </div>
             </section>
             
-            <section class="section">
+            <section class="section" style="background-image: url('/images/gerudoku-faithful-bg.jpg');">
                 <div class="section-content">
                     <h2>GeruDoku Faithful</h2>
-                    <p>A faithful continuation of GeruDoku, maintaining its style while adding new textures.</p>
+                    <p>A faithful adaptation of GeruDoku, maintaining its style while increasing resolution.</p>
                     <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-faithful" class="button">CurseForge</a>
                     <a href="https://modrinth.com/resourcepack/gerudoku-faithful" class="button modrinth">Modrinth</a>
                 </div>
             </section>
             
-            <section class="section">
+            <section class="section" style="background-image: url('/images/gerudoku-genesis-bg.jpg');">
                 <div class="section-content">
                     <h2>GeruDoku Genesis</h2>
                     <p>A reimagining of the classic GeruDoku style for modern Minecraft versions.</p>
@@ -154,10 +156,5 @@
             <p>For more information on the original Shadow of Israphel series and map recreations, please visit our <a href="#">About page</a>.</p>
         </footer>
     </div>
-    <script>
-        document.querySelectorAll('.section').forEach((section, index) => {
-            section.style.setProperty('--bg-image', `url('/images/gerudoku-bg-${index + 1}.jpg')`);
-        });
-    </script>
 </body>
 </html>

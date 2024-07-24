@@ -50,8 +50,21 @@
             position: relative;
             overflow: hidden;
         }
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3); /* Light darkness overlay */
+            transition: background 0.3s ease;
+        }
         .section:hover {
             flex: 2;
+        }
+        .section:hover::before {
+            background: rgba(0, 0, 0, 0); /* Remove darkness on hover */
         }
         .section-content {
             position: relative;

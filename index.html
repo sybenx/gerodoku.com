@@ -8,14 +8,24 @@
     <style>
         body {
             font-family: Verdana, sans-serif;
-            background-color: #3d2e1d; /* Slightly lighter than original #312417 */
-            color: #e6d9c6; /* Slightly lighter than cornsilk */
+            background-color: #3d2e1d;
+            color: #e6d9c6;
             margin: 0;
             padding: 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
+	.button.planetminecraft {
+	    background-color: rgba(173, 216, 230, 0.8); /* Light blue with some transparency */
+	    border-color: #87CEEB; /* Sky blue */
+	    color: #00008B; /* Dark blue text for contrast */
+	}
+	.button.planetminecraft:hover {
+	    background-color: rgba(135, 206, 235, 0.9); /* Slightly darker sky blue on hover */
+	    border-color: #4682B4; /* Steel blue */
+	    color: #000080; /* Navy blue text on hover */
+	}
         .container {
             flex-grow: 1;
             display: flex;
@@ -24,13 +34,18 @@
         .header {
             text-align: center;
             padding: 60px 0 20px;
-            background-color: rgba(61, 46, 29, 0.7); /* Slightly lighter background */
+            background-color: rgba(61, 46, 29, 0.7);
         }
         .header img {
             border-radius: 7%;
             height: 100px;
-            box-shadow: 0px 0px 50px 5px #deb887; /* Slightly brighter shadow */
+            box-shadow: 0px 0px 50px 5px #deb887;
             margin-top: 40px;
+        }
+        .intro {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(61, 46, 29, 0.7);
         }
         .sections {
             display: flex;
@@ -57,14 +72,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3); /* Light darkness overlay */
+            background: rgba(0, 0, 0, 0.3);
             transition: background 0.3s ease;
         }
         .section:hover {
             flex: 2;
         }
         .section:hover::before {
-            background: rgba(0, 0, 0, 0); /* Remove darkness on hover */
+            background: rgba(0, 0, 0, 0);
         }
         .section-content {
             position: relative;
@@ -75,26 +90,26 @@
                          -2px 2px 4px rgba(0,0,0,0.8);
         }
         h1, h2 {
-            color: #deb887; /* Slightly brighter burlywood */
+            color: #deb887;
         }
         .button {
             display: inline-block;
             padding: 10px 16px;
             margin: 5px;
-            background-color: rgba(140, 13, 17, 0.8); /* Slightly transparent */
+            background-color: rgba(140, 13, 17, 0.8);
             color: #ffa8a8;
             text-decoration: none;
             border-radius: 8px;
             border: 2px solid #a80f14;
             transition: all 0.3s ease;
-            text-shadow: none; /* Remove text shadow from buttons */
+            text-shadow: none;
         }
         .button:hover {
             background-color: rgba(82, 5, 8, 0.9);
             color: #B61D23;
         }
         .button.modrinth {
-            background-color: rgba(6, 99, 18, 0.8); /* Slightly transparent */
+            background-color: rgba(6, 99, 18, 0.8);
             border-color: #0a8d1a;
         }
         .button.modrinth:hover {
@@ -105,10 +120,10 @@
             text-align: center;
             padding: 20px 0;
             font-size: 14px;
-            background-color: rgba(61, 46, 29, 0.7); /* Slightly lighter background */
+            background-color: rgba(61, 46, 29, 0.7);
         }
         .footer a {
-            color: #ffe187; /* Slightly brighter link color */
+            color: #ffe187;
             text-decoration: none;
         }
         .footer a:hover {
@@ -123,15 +138,21 @@
             <h1>GeruDoku Resource Packs</h1>
         </header>
         
+        <section class="intro">
+            <h2>Welcome to GeruDoku Resource Packs</h2>
+            <p>Experience Minecraft with our unique textures inspired by the classic Yogscast Minecraft Survival series. Choose from our original pack, faithful continuation, or modern reimagining.</p>
+        </section>
+        
         <div class="sections">
-            <section class="section" style="background-image: url('/images/gerudoku-bg.jpg');">
-                <div class="section-content">
-                    <h2>GeruDoku</h2>
-                    <p>The original GeruDoku texture pack, reminiscent of the Yogscast Minecraft Survival series.</p>
-                    <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku" class="button">CurseForge</a>
-                    <a href="https://modrinth.com/resourcepack/gerudoku" class="button modrinth">Modrinth</a>
-                </div>
-            </section>
+	    <section class="section" style="background-image: url('/images/gerudoku-bg.jpg');">
+	        <div class="section-content">
+	            <h2>GeruDoku</h2>
+	            <p>The original GeruDoku texture pack, reminiscent of the Yogscast Minecraft Survival series.</p>
+	            <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku" class="button">CurseForge</a>
+	            <a href="https://modrinth.com/resourcepack/gerudoku" class="button modrinth">Modrinth</a>
+	            <a href="https://www.planetminecraft.com/texture-pack/gerudoku-1433368/" class="button planetminecraft">Planet Minecraft</a>
+	        </div>
+	    </section>
             
             <section class="section" style="background-image: url('/images/gerudoku-faithful-bg.jpg');">
                 <div class="section-content">
@@ -152,7 +173,7 @@
         </div>
         
         <footer class="footer">
-            <p>Maintained by <a href="https://github.com/sybenx">Syben</a> | <a href="https://github.com/sybenx/GeruDoku">GitHub</a> | <a href="https://www.planetminecraft.com/texture-pack/gerudoku-1433368/">Planet Minecraft</a> | <a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/3031460-gerudoku/">Minecraft Forum</a></p>
+            <p>Maintained by <a href="https://github.com/sybenx">Syben</a> | <a href="https://github.com/sybenx/GeruDoku">GitHub</a> | <a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/3031460-gerudoku/">Minecraft Forum</a></p>
             <p>For more information on the original Shadow of Israphel series and map recreations, please visit our <a href="/about">About page</a>.</p>
         </footer>
     </div>

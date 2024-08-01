@@ -297,6 +297,97 @@
         .version-card p {
             margin-bottom: 1rem;
         }
+        .download-links {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .download-button {
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-button.curseforge {
+            background-color: #F16436;
+        }
+
+        .download-button.modrinth {
+            background-color: #00AF5C;
+        }
+
+        .download-button.planetminecraft {
+            background-color: #3498db;
+        }
+
+        .download-button.curseforge:hover {
+            background-color: #d4572f;
+        }
+
+        .download-button.modrinth:hover {
+            background-color: #008f4c;
+        }
+
+        .download-button.planetminecraft:hover {
+            background-color: #2980b9;
+        }
+        @media (max-width: 768px) {
+        .top-menu {
+            padding: 0.5rem;
+        }
+
+        .menu-toggle {
+            display: block;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .menu-items {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--primary-color);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .menu-items.active {
+            display: flex;
+        }
+
+        .menu-items li {
+            margin: 1rem 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    }
     </style>
 </head>
 <body>
@@ -335,18 +426,30 @@
                 <h3>GeruDoku Faithful</h3>
                 <p>A faithful continuation of the original Gerudoku texture pack.</p>
                 <a href="/faithful" class="button">Learn More</a>
+                <div class="download-links">
+                    <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-faithful" target="_blank" class="download-button curseforge">CurseForge</a>
+                    <a href="https://modrinth.com/resourcepack/gerudoku-faithful" target="_blank" class="download-button modrinth">Modrinth</a>
+                </div>
             </div>
             <div class="version-card">
                 <img src="/images/gerudoku-bg-1.jpg" alt="GeruDoku Original">
                 <h3>GeruDoku Original</h3>
                 <p>Classic GeruDoku from the Yogscast era, updated for modern Minecraft.</p>
                 <a href="/original" class="button">Learn More</a>
+                <div class="download-links">
+                    <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku" target="_blank" class="download-button curseforge">CurseForge</a>
+                    <a href="https://modrinth.com/resourcepack/gerudoku" target="_blank" class="download-button modrinth">Modrinth</a>
+                    <a href="https://www.planetminecraft.com/texture-pack/gerudoku-1433368/" target="_blank" class="download-button planetminecraft">PlanetMinecraft</a>
+                </div>
             </div>
             <div class="version-card">
                 <img src="/images/gerudoku-bg-3.jpg" alt="GeruDoku Genesis">
                 <h3>GeruDoku Genesis</h3>
                 <p>A new era of GeruDoku, evolving the beloved texture pack.</p>
                 <a href="/genesis" class="button">Learn More</a>
+                <div class="download-links">
+                    <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-genesis" target="_blank" class="download-button curseforge">CurseForge</a>
+                </div>
             </div>
         </section>
 
@@ -366,6 +469,24 @@
     </footer>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuItems = document.querySelector('.menu-items');
+
+            menuToggle.addEventListener('click', function() {
+                menuItems.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideMenu = menuItems.contains(event.target);
+                const isClickOnToggle = menuToggle.contains(event.target);
+                if (!isClickInsideMenu && !isClickOnToggle && menuItems.classList.contains('active')) {
+                    menuItems.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                }
+            });
         document.addEventListener('DOMContentLoaded', function() {
             const screenshots = document.querySelectorAll('.screenshot img');
             const overlay = document.getElementById('imageOverlay');

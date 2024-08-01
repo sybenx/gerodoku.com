@@ -1,114 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About GeruDoku - Shadow of Israphel</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <style>
-        body {
-            font-family: Verdana, sans-serif;
-            background-color: #312417;
-            color: cornsilk;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .header {
-            text-align: center;
-            padding: 50px 0;
-            background-color: rgba(222, 184, 135, 0.1);
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-        .header img {
-            border-radius: 7%;
-            height: 150px;
-            box-shadow: 0px 0px 50px 5px burlywood;
-        }
-        h1, h2 {
-            color: burlywood;
-        }
-        .section {
-            background-color: rgba(222, 184, 135, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 16px;
-            margin: 5px;
-            background-color: #71070b;
-            color: #ff9797;
-            text-decoration: none;
-            border-radius: 8px;
-            border: 2px solid #97090e;
-            transition: all 0.3s ease;
-        }
-        .button:hover {
-            background-color: #420407;
-            color: #A60C12;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px 0;
-            font-size: 14px;
-            background-color: rgba(222, 184, 135, 0.1);
-            border-radius: 10px;
-        }
-        a {
-            color: #FFD477;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <img src="/images/gerudoku.png" alt="GeruDoku Logo">
-            <h1>About GeruDoku</h1>
-        </header>
-        
-        <section class="section">
-            <h2>Shadow of Israphel</h2>
-            <p>GeruDoku gained popularity through its use in the Yogscast's iconic Minecraft series, "Shadow of Israphel". This beloved series combined Minecraft gameplay with storytelling, creating a unique and immersive experience for viewers.</p>
-            <p>You can revisit the nostalgia by watching the <a href="https://www.youtube.com/watch?v=2Gi9-UZKYo4&list=PLF60520313D07F366&index=40">Shadow of Israphel Minecraft Series</a> on YouTube.</p>
-        </section>
-        
-        <section class="section">
-            <h2>Map Recreations</h2>
-            <p>For those wanting to explore the world of Shadow of Israphel, there are some map recreations available:</p>
-            <ul>
-                <li><a href="https://www.mediafire.com/file/iwnx48tg7zyqc2o/Shadow_of_Israphel_Stolen_By_Peva_%25281%2529.zip/file">Map leaked by Peva</a> - A leaked map from one of the original creators.</li>
-                <li><a href="https://drive.google.com/open?id=1k9g6cpa7C_hHOdpL9azseGhDW_Gm9NZ4">Fan Recreation</a> - Another recreation found by the GeruDoku maintainer.</li>
-            </ul>
-        </section>
-        
-        <section class="section">
-            <h2>Original Textures</h2>
-            <p>For those interested in the history of GeruDoku or looking to contribute to its development, a set of original textures is available. These textures were included with the leaked map and may be useful in updating GeruDoku:</p>
-            <p><a href="https://www.mediafire.com/file/9xjcus0ylu9wyng/Textures_%25281%2529.zip/file">Download Original Textures</a></p>
-        </section>
-        
-        <section class="section">
-            <h2>Maintaining GeruDoku</h2>
-            <p>GeruDoku is currently maintained to work with modern versions of Minecraft while staying true to the original style used in the Shadow of Israphel series. The goal is to preserve this piece of Minecraft history for future generations of players.</p>
-            <p>If you're interested in contributing to the development of GeruDoku, please visit our <a href="https://github.com/Syberiyxx/GeruDoku/">GitHub repository</a>.</p>
-        </section>
-        
-        <footer class="footer">
-            <p>Return to <a href="index.html">Main Page</a> | Maintained by <a href="https://github.com/sybenx">Syben</a></p>
-            <p><a href="https://www.planetminecraft.com/texture-pack/gerudoku-1433368/">Planet Minecraft</a> | <a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/3031460-gerudoku/">Minecraft Forum</a></p>
-        </footer>
-    </div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>About GeruDoku - Shadow of Israphel</title>
+		<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+		<style>
+			      body {
+			          font-family: Verdana, sans-serif;
+			          background-color: #312417;
+			          color: cornsilk;
+			          margin: 0;
+			          padding: 0;
+			          line-height: 1.6;
+			      }
+			      .container {
+			          max-width: 800px;
+			          margin: 0 auto;
+			          padding: 20px;
+			      }
+			      .header {
+			          text-align: center;
+			          padding: 50px 0;
+			          background-color: rgba(222, 184, 135, 0.1);
+			          border-radius: 10px;
+			          margin-bottom: 30px;
+			      }
+			      .header img {
+			          border-radius: 7%;
+			          height: 150px;
+			          box-shadow: 0px 0px 50px 5px burlywood;
+			      }
+			      h1, h2 {
+			          color: burlywood;
+			      }
+			      .section {
+			          background-color: rgba(222, 184, 135, 0.1);
+			          border-radius: 10px;
+			          padding: 20px;
+			          margin-bottom: 30px;
+			      }
+			      .button {
+			          display: inline-block;
+			          padding: 10px 16px;
+			          margin: 5px;
+			          background-color: #71070b;
+			          color: #ff9797;
+			          text-decoration: none;
+			          border-radius: 8px;
+			          border: 2px solid #97090e;
+			          transition: all 0.3s ease;
+			      }
+			      .button:hover {
+			          background-color: #420407;
+			          color: #A60C12;
+			      }
+			      .footer {
+			          text-align: center;
+			          padding: 20px 0;
+			          font-size: 14px;
+			          background-color: rgba(222, 184, 135, 0.1);
+			          border-radius: 10px;
+			      }
+			      a {
+			          color: #FFD477;
+			          text-decoration: none;
+			      }
+			      a:hover {
+			          text-decoration: underline;
+			      }
+			      .top-menu {
+			      background-color: rgba(61, 46, 29, calc(0.9 - (var(--scroll-factor) * 0.4)));
+			      position: fixed;
+			      top: 0;
+			      left: 0;
+			      right: 0;
+			     z-index: 1000;
+			      transition: background-color 0.3s ease;
+			      }
+
+			.top-menu ul {
+			  list-style-type: none;
+			  margin: 0;
+			  padding: 0;
+			  display: flex;
+			  justify-content: center;
+			}
+
+			.top-menu li {
+			  padding: 0;
+			}
+
+			.top-menu a {
+			  color: #deb887;
+			  text-decoration: none;
+			  padding: 15px 20px;
+			  display: block;
+			  transition: background-color 0.3s ease;
+			}
+
+			.top-menu a:hover {
+			  background-color: rgba(82, 5, 8, 0.9);
+			}
+
+			/* Adjust the header to account for the fixed menu */
+			.header {
+			  padding-top: 100px;
+			}
+
+			@media screen and (max-width: 768px) {
+			  .top-menu ul {
+			      justify-content: center;
+			  }
+
+			  .top-menu a {
+			      padding: 10px 15px;
+			  }
+
+			  .hide-mobile {
+			      display: none;
+			  }
+
+			  .always-show {
+			      margin: 0 20px;
+			  }
+
+			  .header {
+			      padding-top: 60px;
+			  }
+		</style>
+	</head>
+	<body>
+		<nav class="top-menu">
+			<ul>
+				<li class="always-show">
+					<a href="/home">Home</a>
+				</li>
+				<li class="hide-mobile">
+					<a href="/faithful">GeruDoku Faithful</a>
+				</li>
+				<li class="hide-mobile">
+					<a href="/original">GeruDoku Original</a>
+				</li>
+				<li class="hide-mobile">
+					<a href="/genesis">GeruDoku Genesis</a>
+				</li>
+				<li class="always-show">
+					<a href="/about">About</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="container">
+			<header class="header">
+				<img src="/images/gerudoku.png" alt="GeruDoku Logo" />
+				<h1>About GeruDoku</h1>
+			</header>
+			<section class="section">
+				<h2>Shadow of Israphel</h2>
+				<p>
+					GeruDoku gained popularity through its use in the Yogscast's iconic Minecraft series, "Shadow of Israphel". This beloved series combined Minecraft gameplay with storytelling, creating a unique and immersive experience
+					for viewers.
+				</p>
+				<p>You can revisit the nostalgia by watching the <a href="https://www.youtube.com/watch?v=2Gi9-UZKYo4&amp;list=PLF60520313D07F366&amp;index=40">Shadow of Israphel Minecraft Series</a> on YouTube.</p>
+			</section>
+			<section class="section">
+				<h2>Map Recreations</h2>
+				<p>For those wanting to explore the world of Shadow of Israphel, there are some map recreations available:</p>
+				<ul>
+					<li><a href="https://www.mediafire.com/file/iwnx48tg7zyqc2o/Shadow_of_Israphel_Stolen_By_Peva_%25281%2529.zip/file">Map leaked by Peva</a> - A leaked map from one of the original creators.</li>
+					<li><a href="https://drive.google.com/open?id=1k9g6cpa7C_hHOdpL9azseGhDW_Gm9NZ4">Fan Recreation</a> - Another recreation found by the GeruDoku maintainer.</li>
+				</ul>
+			</section>
+			<section class="section">
+				<h2>Original Textures</h2>
+				<p>
+					For those interested in the history of GeruDoku or looking to contribute to its development, a set of original textures is available. These textures were included with the leaked map and may be useful in updating
+					GeruDoku:
+				</p>
+				<p><a href="https://www.mediafire.com/file/9xjcus0ylu9wyng/Textures_%25281%2529.zip/file">Download Original Textures</a></p>
+			</section>
+			<section class="section">
+				<h2>Maintaining GeruDoku</h2>
+				<p>
+					GeruDoku is currently maintained to work with modern versions of Minecraft while staying true to the original style used in the Shadow of Israphel series. The goal is to preserve this piece of Minecraft history for
+					future generations of players.
+				</p>
+				<p>If you're interested in contributing to the development of GeruDoku, please visit our <a href="https://github.com/Syberiyxx/GeruDoku/">GitHub repository</a>.</p>
+			</section>
+			<footer class="footer">
+				<p>Return to <a href="index.html">Main Page</a> | Maintained by <a href="https://github.com/sybenx">Syben</a></p>
+				<p>
+					<a href="https://www.planetminecraft.com/texture-pack/gerudoku-1433368/">Planet Minecraft</a> |
+					<a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/3031460-gerudoku/">Minecraft Forum</a>
+				</p>
+			</footer>
+		</div>
+	</body>
 </html>

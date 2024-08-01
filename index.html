@@ -175,11 +175,95 @@
 	    max-width: 100%;
 	    height: auto;
 	}
+:root {
+    --scroll-factor: 0;
+}
+
+@supports (animation-timeline: scroll()) {
+    :root {
+        animation: scroll-progress linear;
+        animation-timeline: scroll();
+    }
+    @keyframes scroll-progress {
+        0% { --scroll-factor: 0; }
+        100% { --scroll-factor: 1; }
+    }
+}
+
+.top-menu {
+    background-color: rgba(61, 46, 29, calc(0.9 - (var(--scroll-factor) * 0.4)));
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.top-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.top-menu li {
+    padding: 0;
+}
+
+.top-menu a {
+    color: #deb887;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.top-menu a:hover {
+    background-color: rgba(82, 5, 8, 0.9);
+}
+
+/* Adjust the header to account for the fixed menu */
+.header {
+    padding-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .top-menu ul {
+        justify-content: center;
+    }
+
+    .top-menu a {
+        padding: 10px 15px;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .always-show {
+        margin: 0 20px;
+    }
+
+    .header {
+        padding-top: 60px;
+    }
+}
     </style>
 </head>
 <body>
+    <nav class="top-menu">
+        <ul>
+            <li class="always-show"><a href="#home">Home</a></li>
+            <li class="hide-mobile"><a href="#faithful">GeruDoku Faithful</a></li>
+            <li class="hide-mobile"><a href="#original">GeruDoku Original</a></li>
+            <li class="hide-mobile"><a href="#genesis">GeruDoku Genesis</a></li>
+            <li class="always-show"><a href="/about">About</a></li>
+        </ul>
+    </nav>
     <div class="container">
-        <header class="header">
+        <header id="home" class="header">
             <img src="/images/gerudoku.png" alt="GeruDoku Logo">
             <h1>GeruDoku Resource Packs</h1>
         </header>
@@ -190,7 +274,7 @@
         </section>
         
         <div class="sections">
-            <section class="section gerudoku-faithful" style="background-image: url('/images/gerudoku-faithful-bg.jpg');">
+            <section id="faithful" class="section gerudoku-faithful" style="background-image: url('/images/gerudoku-faithful-bg.jpg');">
                 <div class="section-content">
                     <h2>GeruDoku Faithful</h2>
                     <p>A faithful continuation of GeruDoku<span class="wide-screen-only">, maintaining its style while adding new textures.</span></p>
@@ -205,7 +289,7 @@
             </section>
             
             <div class="horizontal-sections">
-                <section class="section horizontal-section" style="background-image: url('/images/gerudoku-bg.jpg');">
+                <section id="original" class="section horizontal-section" style="background-image: url('/images/gerudoku-bg.jpg');">
                     <div class="section-content">
                         <h2>GeruDoku</h2>
                         <p>The original GeruDoku texture pack<span class="wide-screen-only">, reminiscent of the Yogscast Minecraft Survival series.</span></p>
@@ -221,7 +305,7 @@
                     </div>
                 </section>
                 
-                <section class="section horizontal-section" style="background-image: url('/images/gerudoku-genesis-bg.jpg');">
+                <section id="genesis" class="section horizontal-section" style="background-image: url('/images/gerudoku-genesis-bg.jpg');">
                     <div class="section-content">
                         <h2>GeruDoku Genesis</h2>
                         <p>A reimagining of the classic<span class="wide-screen-only"> GeruDoku style for modern Minecraft versions.</span></p>

@@ -64,6 +64,7 @@
             background-position: center;
             position: relative;
             overflow: hidden;
+	    padding: 30px; /* Increased from 20px */
         }
         .section::before {
             content: '';
@@ -89,6 +90,10 @@
                          2px -2px 4px rgba(0,0,0,0.8), 
                          -2px 2px 4px rgba(0,0,0,0.8);
         }
+	.section-content p {
+	    margin: 10px 0; /* Add some vertical spacing between paragraphs */
+	}
+
         h1, h2 {
             color: #deb887;
         }
@@ -143,34 +148,39 @@
             <p>Experience Minecraft with our unique textures inspired by the classic Yogscast Minecraft Survival series. Choose from our original pack, faithful continuation, or modern reimagining.</p>
         </section>
         
-        <div class="sections">
-	    <section class="section" style="background-image: url('/images/gerudoku-bg.jpg');">
-	        <div class="section-content">
-	            <h2>GeruDoku</h2>
-	            <p>The original GeruDoku texture pack, reminiscent of the Yogscast Minecraft Survival series.</p>
-	            <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku" class="button">CurseForge</a>
-	            <a href="https://modrinth.com/resourcepack/gerudoku" class="button modrinth">Modrinth</a>
-	            <a href="https://www.planetminecraft.com/texture-pack/gerudoku-1433368/" class="button planetminecraft">Planet Minecraft</a>
-	        </div>
-	    </section>
-            
-            <section class="section" style="background-image: url('/images/gerudoku-faithful-bg.jpg');">
-                <div class="section-content">
-                    <h2>GeruDoku Faithful</h2>
-                    <p>A faithful continuation of GeruDoku, maintaining its style while adding new textures.</p>
-                    <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-faithful" class="button">CurseForge</a>
-                    <a href="https://modrinth.com/resourcepack/gerudoku-faithful" class="button modrinth">Modrinth</a>
-                </div>
-            </section>
-            
-            <section class="section" style="background-image: url('/images/gerudoku-genesis-bg.jpg');">
-                <div class="section-content">
-                    <h2>GeruDoku Genesis</h2>
-                    <p>A reimagining of the classic GeruDoku style for modern Minecraft versions.</p>
-                    <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-genesis" class="button">CurseForge</a>
-                </div>
-            </section>
+<div class="sections">
+    <section class="section" style="background-image: url('/images/gerudoku-bg.jpg');">
+        <div class="section-content">
+            <h2>GeruDoku</h2>
+            <p>The original GeruDoku texture pack, reminiscent of the Yogscast Minecraft Survival series.</p>
+            <p><strong>Supports Minecraft versions 1.14 - 1.19</strong></p>
+            <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku" class="button">CurseForge</a>
+            <a href="https://modrinth.com/resourcepack/gerudoku" class="button modrinth">Modrinth</a>
+            <a href="https://www.planetminecraft.com/texture-pack/gerudoku-1433368/" class="button planetminecraft">Planet Minecraft</a>
         </div>
+    </section>
+    
+    <section class="section" style="background-image: url('/images/gerudoku-faithful-bg.jpg');">
+        <div class="section-content">
+            <h2>GeruDoku Faithful</h2>
+            <p>A faithful continuation of GeruDoku, maintaining its style while adding new textures.</p>
+            <p><strong>Actively updated for the latest Minecraft versions</strong></p>
+            <p><strong>Legacy support for Beta 1.7 and Beta 1.8</strong></p>
+            <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-faithful" class="button">CurseForge</a>
+            <a href="https://modrinth.com/resourcepack/gerudoku-faithful" class="button modrinth">Modrinth</a>
+        </div>
+    </section>
+    
+    <section class="section" style="background-image: url('/images/gerudoku-genesis-bg.jpg');">
+        <div class="section-content">
+            <h2>GeruDoku Genesis</h2>
+            <p>A reimagining of the classic GeruDoku style for modern Minecraft versions.</p>
+            <p><strong>Full support for 1.16, partial update to 1.20</strong></p>
+            <p><strong>Legacy support for Beta 1.7 and Beta 1.8</strong></p>
+            <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-genesis" class="button">CurseForge</a>
+        </div>
+    </section>
+</div>
         
         <footer class="footer">
             <p>Maintained by <a href="https://github.com/sybenx">Syben</a> | <a href="https://github.com/sybenx/GeruDoku">GitHub</a> | <a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/3031460-gerudoku/">Minecraft Forum</a></p>

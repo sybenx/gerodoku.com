@@ -3,526 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeruDoku - Minecraft Texture Packs</title>
+    <title>GeruDoku Resource Packs</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #5D4037;
-            --secondary-color: #8D6E63;
-            --accent-color: #3a7aa5;
-            --text-color: #FFFFFF;
-            --background-color: #3E2723;
-            --link-color: #5267c5;           /* New light gold color for links */
-            --link-hover-color: #949bd8;     /* Lighter shade for link hover state */
-        }
-
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--background-color);
-            background-image: url('path/to/subtle-minecraft-texture.png');
-            background-repeat: repeat;
-            color: var(--text-color);
+            font-family: Verdana, sans-serif;
+            background-color: #3d2e1d;
+            color: #e6d9c6;
             margin: 0;
             padding: 0;
-            font-size: 16px;
-            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-
-        h1, h2, h3 {
-            font-family: 'Press Start 2P', cursive;
-            color: var(--accent-color);
+        .button.planetminecraft {
+            background-color: rgba(173, 216, 230, 0.8); /* Light blue with some transparency */
+            border-color: #87CEEB; /* Sky blue */
+            color: #00008B; /* Dark blue text for contrast */
         }
-
+        .button.planetminecraft:hover {
+            background-color: rgba(135, 206, 235, 0.9); /* Slightly darker sky blue on hover */
+            border-color: #4682B4; /* Steel blue */
+            color: #000080; /* Navy blue text on hover */
+        }
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
-
-        .hero {
-            background-image: url('https://cdn.modrinth.com/data/b4lQze2N/images/9dd620105ff153534db387cafb85c27fa048ea14.png');
+        .header {
+            text-align: center;
+            padding: 60px 0 20px;
+            background-color: rgba(61, 46, 29, 0.7);
+        }
+        .header img {
+            border-radius: 7%;
+            height: 100px;
+            box-shadow: 0px 0px 50px 5px #deb887;
+            margin-top: 40px;
+        }
+        .intro {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(61, 46, 29, 0.7);
+        }
+        .sections {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .section {
+            padding: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             background-size: cover;
             background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero-content {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 2rem;
-            border-radius: 10px;
-        }
-
-        .logo {
-            width: 150px;
-            height: auto;
-            margin-bottom: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.1);
-        }
-
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover, a:focus {
-            color: var(--link-hover-color);
-            text-decoration: underline;
-        }
-
-        .hero-text {
-            font-size: 1.2rem;
-            margin-top: 1rem;
-        }
-
-        .top-menu {
-            background-color: var(--primary-color);
-            padding: 1rem;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: var(--text-color);
-            margin: 5px 0;
-        }
-
-        .menu-items {
-            display: flex;
-            justify-content: center;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .menu-items li {
-            margin: 0 1rem;
-        }
-
-        .menu-items a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .menu-items a:hover {
-            color: var(--accent-color);
-        }
-
-        .button {
-            background-color: var(--accent-color);
-            color: var(--text-color);
-            padding: 0.8em 1.5em;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .button:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-gap: 1rem;
-            grid-auto-flow: dense;
-        }
-
-        .screenshot {
-            break-inside: avoid;
-            margin-bottom: 1rem;
-        }
-
-        .screenshot img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .screenshot img:hover {
-            transform: scale(1.05);
-        }
-
-        .footer {
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .menu-items {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .menu-items.active {
-                display: flex;
-            }
-
-            .menu-items li {
-                margin: 1rem 0;
-            }
-        }
-        .expandable-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-
-        .expandable-content.expanded {
-            max-height: 1000px; /* Adjust this value based on your content */
-            transition: max-height 0.5s ease-in;
-        }
-
-        .learn-more-btn {
-            cursor: pointer;
-        }
-
-        .learn-more-btn::after {
-            content: '▼';
-            display: inline-block;
-            margin-left: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .learn-more-btn.expanded::after {
-            transform: rotate(180deg);
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1001;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .overlay img {
-            max-width: 80%;
-            max-height: 80%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 5px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .overlay img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Additional styles for the main page */
-        .version-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .version-card {
-            background-color: var(--primary-color);
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .version-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .version-card img {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-
-        .version-card h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .version-card p {
-            margin-bottom: 1rem;
-        }
-        .download-links {
-            margin-top: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-
-        .download-button {
-            padding: 0.5em 1em;
-            border-radius: 5px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .download-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .download-button.curseforge {
-            background-color: #F16436;
-        }
-
-        .download-button.modrinth {
-            background-color: #00AF5C;
-        }
-
-        .download-button.planetminecraft {
-            background-color: #3498db;
-        }
-
-        .download-button.curseforge:hover {
-            background-color: #d4572f;
-        }
-
-        .download-button.modrinth:hover {
-            background-color: #008f4c;
-        }
-
-        .download-button.planetminecraft:hover {
-            background-color: #2980b9;
-        }
-        @media (max-width: 768px) {
-        .top-menu {
-            padding: 0.5rem;
-        }
-
-        .menu-toggle {
-            display: block;
             position: relative;
-            z-index: 1001;
+            overflow: hidden;
+            padding: 30px; /* Increased from 20px */
+            width: 100%; /* Ensures section takes full width */
+            max-width: 100%; /* Ensures section doesn't extend past parent */
+    	    box-sizing: border-box; /* Add this line */
+            /* Add this new rule */
         }
-
-        .menu-items {
-            display: none;
-            position: fixed;
+        .section.gerudoku-faithful {
+            min-height: 400px; /* Adjust this value as needed */
+	    padding: 50px 30px;
+        }
+        .section::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: var(--primary-color);
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
+            background: rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease;
         }
-
-        .menu-items.active {
+        .section:hover::before {
+            background: rgba(0, 0, 0, 0);
+        }
+        .section-content {
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 
+                         -2px -2px 4px rgba(0,0,0,0.8), 
+                         2px -2px 4px rgba(0,0,0,0.8), 
+                         -2px 2px 4px rgba(0,0,0,0.8);
+        }
+        .section-content p {
+            margin: 10px 0; /* Add some vertical spacing between paragraphs */
+        }
+        h1, h2 {
+            color: #deb887;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 16px;
+            margin: 5px;
+            background-color: rgba(140, 13, 17, 0.8);
+            color: #ffa8a8;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 2px solid #a80f14;
+            transition: all 0.3s ease;
+            text-shadow: none;
+        }
+        .button:hover {
+            background-color: rgba(82, 5, 8, 0.9);
+            color: #B61D23;
+        }
+        .button.modrinth {
+            background-color: rgba(6, 99, 18, 0.8);
+            border-color: #0a8d1a;
+        }
+        .button.modrinth:hover {
+            background-color: rgba(4, 64, 12, 0.9);
+            border-color: #066312;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            background-color: rgba(61, 46, 29, 0.7);
+        }
+        .footer a {
+            color: #ffe187;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .version-info {
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .wide-screen-only {
+            display: none;
+        }
+        .mobile-only {
+            display: inline;
+        }
+        @media screen and (min-width: 768px) {
+            .wide-screen-only {
+                display: inline;
+            }
+            .mobile-only {
+                display: none;
+            }
+        }
+        .horizontal-sections {
             display: flex;
+            flex-direction: row;
+	    flex-wrap: wrap; /* Add this line */
         }
+        .horizontal-section {
+            flex: 1;
+	    min-width: 300px; /* Add this line */
+        }
+        .info-section {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(61, 46, 29, 0.7);
+            color: #deb887;
+        }
+	img {
+	    max-width: 100%;
+	    height: auto;
+	}
+:root {
+    --scroll-factor: 0;
+}
 
-        .menu-items li {
-            margin: 1rem 0;
-        }
-
-        .menu-toggle.active .bar:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .menu-toggle.active .bar:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active .bar:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
+@supports (animation-timeline: scroll()) {
+    :root {
+        animation: scroll-progress linear;
+        animation-timeline: scroll();
     }
+    @keyframes scroll-progress {
+        0% { --scroll-factor: 0; }
+        100% { --scroll-factor: 1; }
+    }
+}
+
+.top-menu {
+    background-color: rgba(61, 46, 29, calc(0.9 - (var(--scroll-factor) * 0.4)));
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.top-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.top-menu li {
+    padding: 0;
+}
+
+.top-menu a {
+    color: #deb887;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.top-menu a:hover {
+    background-color: rgba(82, 5, 8, 0.9);
+}
+
+/* Adjust the header to account for the fixed menu */
+.header {
+    padding-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .top-menu ul {
+        justify-content: center;
+    }
+
+    .top-menu a {
+        padding: 10px 15px;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .always-show {
+        margin: 0 20px;
+    }
+
+    .header {
+        padding-top: 60px;
+    }
+}
     </style>
 </head>
 <body>
     <nav class="top-menu">
-        <button class="menu-toggle" aria-label="Toggle menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <ul class="menu-items">
-            <li><a href="/">Home</a></li>
-            <li><a href="/faithful">GeruDoku Faithful</a></li>
-            <li><a href="/original">GeruDoku Original</a></li>
-            <li><a href="/genesis">GeruDoku Genesis</a></li>
-            <li><a href="/about">About</a></li>
+        <ul>
+            <li class="always-show"><a href="#home">Home</a></li>
+            <li class="hide-mobile"><a href="#faithful">GeruDoku Faithful</a></li>
+            <li class="hide-mobile"><a href="#original">GeruDoku Original</a></li>
+            <li class="hide-mobile"><a href="#genesis">GeruDoku Genesis</a></li>
+            <li class="always-show"><a href="/about">About</a></li>
         </ul>
     </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <img src="/images/gerudoku.png" alt="GeruDoku Logo" class="logo">
-            <h1>GeruDoku</h1>
-            <p class="hero-text">Experience Minecraft in a whole new light</p>
-        </div>
-    </header>
-
     <div class="container">
-        <section>
-            <h2>Welcome to GeruDoku</h2>
-            <p>GeruDoku offers a range of Minecraft texture packs that enhance your gameplay experience. Choose from our different versions to find the perfect style for your Minecraft world.</p>
+        <header id="home" class="header">
+            <img src="/images/gerudoku.png" alt="GeruDoku Logo">
+            <h1>GeruDoku Resource Packs</h1>
+        </header>
+        
+        <section class="intro">
+            <h2>Welcome to GeruDoku Resource Packs</h2>
+            <p>Experience Minecraft with our unique textures inspired by the classic Yogscast Minecraft Survival series. Choose from our original pack, faithful continuation, or modern reimagining.</p>
         </section>
-
-        <section class="version-grid">
-            <div class="version-card">
-                <img src="/images/gerudoku-faithful-bg.jpg" alt="GeruDoku Faithful">
-                <h3>GeruDoku Faithful</h3>
-                <p>A faithful continuation of the original Gerudoku texture pack.</p>
-                <a href="/faithful" class="button">Learn More</a>
-                <div class="download-links">
-                    <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-faithful" target="_blank" class="download-button curseforge">CurseForge</a>
-                    <a href="https://modrinth.com/resourcepack/gerudoku-faithful" target="_blank" class="download-button modrinth">Modrinth</a>
+        
+        <div class="sections">
+            <section id="faithful" class="section gerudoku-faithful" style="background-image: url('/images/gerudoku-faithful-bg.jpg');">
+                <div class="section-content">
+                    <h2>GeruDoku Faithful</h2>
+                    <p>A faithful continuation of GeruDoku<span class="wide-screen-only">, maintaining its style while adding new textures.</span></p>
+                    <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-faithful" class="button">CurseForge</a>
+                    <a href="https://modrinth.com/resourcepack/gerudoku-faithful" class="button modrinth">Modrinth</a>
+                    <p class="version-info"><strong>Actively updated <span class="wide-screen-only">for the latest Minecraft versions</span></strong></p>
                 </div>
+            </section>
+            
+            <section class="info-section">
+                <p><strong>Note:</strong> The following packs are legacy packs and are no longer updated.</p>
+            </section>
+            
+            <div class="horizontal-sections">
+                <section id="original" class="section horizontal-section" style="background-image: url('/images/gerudoku-bg.jpg');">
+                    <div class="section-content">
+                        <h2>GeruDoku</h2>
+                        <p>The original GeruDoku texture pack<span class="wide-screen-only">, reminiscent of the Yogscast Minecraft Survival series.</span></p>
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku" class="button">CurseForge</a>
+                        <a href="https://modrinth.com/resourcepack/gerudoku" class="button modrinth">Modrinth</a>
+                        <a href="https://www.planetminecraft.com/texture-pack/gerudoku-1433368/" class="button planetminecraft">Planet Minecraft</a>
+                        <p class="version-info">
+                            <strong>
+                                <span class="wide-screen-only">Supports Minecraft versions </span>
+                                1.14 - 1.19
+                            </strong>
+                        </p>
+                    </div>
+                </section>
+                
+                <section id="genesis" class="section horizontal-section" style="background-image: url('/images/gerudoku-genesis-bg.jpg');">
+                    <div class="section-content">
+                        <h2>GeruDoku Genesis</h2>
+                        <p>A reimagining of the classic<span class="wide-screen-only"> GeruDoku style for modern Minecraft versions.</span></p>
+                        <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-genesis" class="button">CurseForge</a>
+                        <p class="version-info">
+                            <strong>
+                                <span class="wide-screen-only">Full support for </span>
+                                1.16<span class="wide-screen-only">, partial update to</span><span class="mobile-only">,</span> 1.20
+                            </strong>
+                        </p>
+                        <p class="version-info">
+                            <strong>
+                                <span class="wide-screen-only">Legacy support for Beta </span>
+                                1.7<span class="mobile-only">b</span><span class="wide-screen-only"> and Beta</span><span class="mobile-only"> -</span> 1.8<span class="mobile-only">b</span>
+                            </strong>
+                        </p>
+                    </div>
+                </section>
             </div>
-            <div class="version-card">
-                <img src="/images/gerudoku-bg-1.jpg" alt="GeruDoku Original">
-                <h3>GeruDoku Original</h3>
-                <p>Classic GeruDoku from the Yogscast era, updated for modern Minecraft.</p>
-                <a href="/original" class="button">Learn More</a>
-                <div class="download-links">
-                    <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku" target="_blank" class="download-button curseforge">CurseForge</a>
-                    <a href="https://modrinth.com/resourcepack/gerudoku" target="_blank" class="download-button modrinth">Modrinth</a>
-                    <a href="https://www.planetminecraft.com/texture-pack/gerudoku-1433368/" target="_blank" class="download-button planetminecraft">PlanetMinecraft</a>
-                </div>
-            </div>
-            <div class="version-card">
-                <img src="/images/gerudoku-bg-3.jpg" alt="GeruDoku Genesis">
-                <h3>GeruDoku Genesis</h3>
-                <p>A new era of GeruDoku, evolving the beloved texture pack.</p>
-                <a href="/genesis" class="button">Learn More</a>
-                <div class="download-links">
-                    <a href="https://www.curseforge.com/minecraft/texture-packs/gerudoku-genesis" target="_blank" class="download-button curseforge">CurseForge</a>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Why Choose GeruDoku?</h2>
-            <ul>
-                <li>Multiple versions to suit your style</li>
-                <li>Active community and ongoing development</li>
-                <li>Compatible with modern Minecraft versions</li>
-                <li>Rich history and nostalgic appeal</li>
-            </ul>
-        </section>
+        </div>
+        
+        <footer class="footer">
+            <p>Maintained by <a href="https://github.com/sybenx">Syben</a> | <a href="https://github.com/sybenx/GeruDoku">GitHub</a> | <a href="https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/3031460-gerudoku/">Minecraft Forum</a></p>
+            <p>For more information on the original Shadow of Israphel series and map recreations, please visit our <a href="/about">About page</a>.</p>
+        </footer>
     </div>
-
-    <footer class="footer">
-        <p>&copy; 2024 GeruDoku. All rights reserved.</p>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const menuItems = document.querySelector('.menu-items');
-
-            menuToggle.addEventListener('click', function() {
-                menuItems.classList.toggle('active');
-                menuToggle.classList.toggle('active');
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', function(event) {
-                const isClickInsideMenu = menuItems.contains(event.target);
-                const isClickOnToggle = menuToggle.contains(event.target);
-                if (!isClickInsideMenu && !isClickOnToggle && menuItems.classList.contains('active')) {
-                    menuItems.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-            });
-        document.addEventListener('DOMContentLoaded', function() {
-            const screenshots = document.querySelectorAll('.screenshot img');
-            const overlay = document.getElementById('imageOverlay');
-            const enlargedImage = document.getElementById('enlargedImage');
-
-            screenshots.forEach(img => {
-                img.addEventListener('click', function() {
-                    enlargedImage.src = this.src;
-                    overlay.classList.add('active');
-                });
-            });
-
-            overlay.addEventListener('click', function() {
-                this.classList.remove('active');
-            });
-            const menuToggle = document.querySelector('.menu-toggle');
-            const menuItems = document.querySelector('.menu-items');
-
-            menuToggle.addEventListener('click', function() {
-                menuItems.classList.toggle('active');
-            });
-
-            // New JavaScript for the expandable content
-            const learnMoreBtn = document.getElementById('learnMoreBtn');
-            const expandableContent = document.getElementById('expandableContent');
-
-            learnMoreBtn.addEventListener('click', function() {
-                expandableContent.classList.toggle('expanded');
-                learnMoreBtn.classList.toggle('expanded');
-                if (expandableContent.classList.contains('expanded')) {
-                    learnMoreBtn.textContent = 'Show Less';
-                } else {
-                    learnMoreBtn.textContent = 'Learn More';
-                }
-            });
-        });
-    </script>
 </body>
 </html>

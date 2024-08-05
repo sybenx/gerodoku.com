@@ -17,14 +17,14 @@
             flex-direction: column;
         }
         .button.planetminecraft {
-            background-color: rgba(173, 216, 230, 0.8); /* Light blue with some transparency */
+            background-color: #4d84db; /* Light blue with some transparency */
             border-color: #87CEEB; /* Sky blue */
-            color: #00008B; /* Dark blue text for contrast */
+            color: #142642; /* Dark blue text for contrast */
         }
         .button.planetminecraft:hover {
-            background-color: rgba(135, 206, 235, 0.9); /* Slightly darker sky blue on hover */
+            background-color: rgb(89, 139, 219); /* Slightly darker sky blue on hover */
             border-color: #4682B4; /* Steel blue */
-            color: #000080; /* Navy blue text on hover */
+            color: #add3ff; /* Navy blue text on hover */
         }
         .container {
             flex-grow: 1;
@@ -90,13 +90,13 @@
         .section-content {
             position: relative;
             z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 
-                         -2px -2px 4px rgba(0,0,0,0.8), 
-                         2px -2px 4px rgba(0,0,0,0.8), 
-                         -2px 2px 4px rgba(0,0,0,0.8);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
         }
+        .section-content h2,
         .section-content p {
-            margin: 10px 0; /* Add some vertical spacing between paragraphs */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
         h1, h2 {
             color: #deb887;
@@ -120,10 +120,12 @@
         .button.modrinth {
             background-color: rgba(6, 99, 18, 0.8);
             border-color: #0a8d1a;
+            color: #c6ffaf; /* Navy blue text on hover */
         }
         .button.modrinth:hover {
             background-color: rgba(4, 64, 12, 0.9);
             border-color: #066312;
+            color: #78f347; /* Navy blue text on hover */
         }
         .footer {
             text-align: center;
@@ -141,6 +143,8 @@
         .version-info {
             margin-top: 15px;
             font-size: 0.9em;
+            font-weight: bold;
+            color: #ffd700;
         }
         .wide-screen-only {
             display: none;
